@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>For Anjali ❤️</title>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
 <style>
   /* --- Reset & Base --- */
   * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; -webkit-tap-highlight-color: transparent; }
@@ -15,11 +15,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Black to Pink Gradient (Dark Luxury) */
-    background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #ff0a54 100%);
+    /* Dynamic Dark Red/Black Theme */
+    background: linear-gradient(135deg, #000000 0%, #2c000e 50%, #c9003c 100%);
     background-size: 200% 200%;
-    animation: gradientShift 10s ease infinite;
-    font-family: 'Cormorant Garamond', serif; /* Elegant Serif Font */
+    animation: gradientShift 8s ease infinite;
+    font-family: 'Playfair Display', serif;
     overflow: hidden;
     position: relative;
     color: white;
@@ -31,13 +31,13 @@
     100% { background-position: 0% 50%; }
   }
 
-  /* --- Floating Background Particles --- */
+  /* --- Glowing Background Particles --- */
   .bg-particle {
     position: absolute;
-    background: radial-gradient(circle, rgba(255, 10, 84, 0.8) 0%, rgba(0,0,0,0) 70%);
+    background: radial-gradient(circle, rgba(255, 0, 60, 0.6) 0%, rgba(0,0,0,0) 70%);
     border-radius: 50%;
-    opacity: 0.5;
-    animation: floatUp 15s linear infinite;
+    opacity: 0.6;
+    animation: floatUp 12s linear infinite;
     bottom: -10vh;
     z-index: 0;
     pointer-events: none;
@@ -45,27 +45,28 @@
 
   @keyframes floatUp {
     0% { transform: translateY(0) scale(1); opacity: 0; }
+    20% { opacity: 0.8; }
     100% { transform: translateY(-120vh) scale(0.5); opacity: 0; }
   }
 
   /* --- Main Card --- */
   .card {
-    background: rgba(20, 20, 20, 0.7); /* Darker Glass */
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    background: rgba(30, 30, 30, 0.6);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
     padding: 60px 40px;
-    border-radius: 40px;
-    box-shadow: 0 0 50px rgba(255, 10, 84, 0.2);
+    border-radius: 30px;
+    box-shadow: 0 0 60px rgba(201, 0, 60, 0.3);
     text-align: center;
     max-width: 450px;
     width: 90%;
     z-index: 10;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    transition: transform 0.4s ease, opacity 0.4s;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.5s ease, opacity 0.5s;
     position: relative;
   }
 
-  /* Image Container - Fixed Dimensions to prevent layout shift */
+  /* Image styling */
   .img-container {
     height: 180px;
     display: flex;
@@ -76,26 +77,25 @@
 
   .main-img {
     height: 160px;
-    filter: drop-shadow(0 0 15px rgba(255, 10, 84, 0.5));
-    border-radius: 10px;
+    filter: drop-shadow(0 0 20px rgba(255, 0, 60, 0.4));
+    border-radius: 15px;
   }
 
   h1 {
     font-family: 'Dancing Script', cursive;
-    font-size: 3.5rem;
-    color: #ff99ac;
+    font-size: 3.2rem;
+    color: #ff3366;
     margin-bottom: 15px;
-    line-height: 1.1;
+    line-height: 1.2;
     text-shadow: 0 4px 10px rgba(0,0,0,0.8);
   }
 
   p {
-    color: #ebd0d6;
-    font-size: 1.4rem;
+    color: #ffdde5;
+    font-size: 1.2rem;
     margin-bottom: 40px;
-    font-weight: 400;
     letter-spacing: 0.5px;
-    line-height: 1.4;
+    font-weight: 500;
   }
 
   /* Buttons */
@@ -108,34 +108,34 @@
   }
 
   button {
-    padding: 15px 40px;
-    font-size: 1.3rem;
+    padding: 14px 40px;
+    font-size: 1.2rem;
     border-radius: 50px;
     border: none;
     cursor: pointer;
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 600;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    position: relative;
     letter-spacing: 1px;
+    position: relative;
   }
 
   .yes-btn {
-    background: #ff0a54;
+    background: #c9003c;
     color: white;
-    box-shadow: 0 0 25px rgba(255, 10, 84, 0.5);
+    box-shadow: 0 0 30px rgba(201, 0, 60, 0.5);
     z-index: 5;
   }
   .yes-btn:hover {
     transform: scale(1.05);
-    background: #ff2c6d;
-    box-shadow: 0 0 35px rgba(255, 10, 84, 0.7);
+    background: #e60045;
+    box-shadow: 0 0 40px rgba(201, 0, 60, 0.7);
   }
 
   .no-btn {
     background: transparent;
-    color: #ff0a54;
-    border: 2px solid #ff0a54;
+    color: #c9003c;
+    border: 2px solid #c9003c;
     z-index: 4;
   }
 
@@ -146,7 +146,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.95); /* Deep black fade */
+    background: black; /* Deep black base */
     z-index: 100;
     display: none;
     flex-direction: column;
@@ -158,34 +158,36 @@
     padding: 20px;
   }
 
+  /* Romantic Hug Image */
   .success-img {
-    height: 200px;
-    margin-bottom: 40px;
+    height: 220px;
+    margin-bottom: 30px;
     opacity: 0;
     transform: translateY(20px);
     animation: fadeUp 1s forwards 0.5s;
-    filter: drop-shadow(0 0 20px rgba(255, 10, 84, 0.3));
-    border-radius: 15px;
+    filter: drop-shadow(0 0 30px rgba(255, 0, 60, 0.5));
+    border-radius: 20px;
   }
 
   .final-msg {
     font-family: 'Dancing Script', cursive;
     font-size: 4rem;
-    color: #ff0a54;
-    text-shadow: 0 0 15px rgba(255, 10, 84, 0.5);
-    margin-bottom: 20px;
+    color: #ff3366;
+    text-shadow: 0 0 20px rgba(255, 51, 102, 0.6);
+    margin-bottom: 25px;
     opacity: 0;
     animation: fadeUp 1s forwards 1s;
   }
 
   .deep-line {
-    font-size: 1.5rem;
-    color: #ddd;
+    font-size: 1.3rem;
+    color: #e0e0e0;
     max-width: 600px;
     line-height: 1.6;
     opacity: 0;
     animation: fadeUp 1s forwards 1.5s;
     font-style: italic;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.8);
   }
 
   @keyframes fadeUp {
@@ -198,20 +200,20 @@
 
 <div class="card" id="card">
   <div class="img-container">
-    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmM2ZDJ4ZWh4cm00aHh4OG54bm54bm54bm54bm54bm54/L2r3K7Hq8qQ5a/giphy.gif" class="main-img" alt="Cute Cat">
-    </div>
+    <img src="https://media1.tenor.com/m/K2Q_1gJ3M74AAAAC/mochi-peach.gif" class="main-img" alt="Cute Cat">
+  </div>
   
   <h1>Anjali, will you be my Valentine? 🌹</h1>
   <p>I promise to make you the happiest! ✨</p>
   
   <div class="btn-container">
-    <button class="yes-btn" onclick="celebrate()">Yes, Forever ❤️</button>
+    <button class="yes-btn" onclick="celebrate()">Yes! ❤️</button>
     <button class="no-btn" id="no-btn">No</button>
   </div>
 </div>
 
 <div class="success-overlay" id="success-screen">
-  <img src="https://media.giphy.com/media/l4pTfx2qLszoacZRS/giphy.gif" class="success-img" alt="Hug">
+  <img src="https://media1.tenor.com/m/J7eGD3qj1aIAAAAC/mochi-peach.gif" class="success-img" alt="Hug">
   
   <div class="final-msg">
     I love you, Anjali.
@@ -226,7 +228,7 @@
   const card = document.getElementById('card');
   const successScreen = document.getElementById('success-screen');
 
-  // 1. Particle Background
+  // 1. Create Floating Background Particles
   function createParticles() {
     for(let i=0; i<40; i++) {
       let p = document.createElement('div');
@@ -241,11 +243,11 @@
   }
   createParticles();
 
-  // 2. Button Chase Logic (Impossible to click)
+  // 2. The "No" Button Chase Logic
   const events = ['mouseover', 'touchstart', 'click'];
   events.forEach(event => {
     noBtn.addEventListener(event, (e) => {
-      e.preventDefault(); // Stop default click
+      e.preventDefault();
       moveButton();
     });
   });
@@ -254,7 +256,6 @@
     const maxX = window.innerWidth - noBtn.offsetWidth - 50;
     const maxY = window.innerHeight - noBtn.offsetHeight - 50;
     
-    // Calculate new position
     const x = Math.max(20, Math.random() * maxX);
     const y = Math.max(20, Math.random() * maxY);
 
@@ -262,19 +263,23 @@
     noBtn.style.left = `${x}px`;
     noBtn.style.top = `${y}px`;
     
-    // Playful Phrases
-    const phrases = ["Try again! 🌹", "Not an option!", "Don't be shy!", "Look here! 👇", "Anjali pls!"];
+    const phrases = ["Try again! 🌹", "Not an option!", "Look here! 👇", "Anjali pls!", "Forever?"];
     noBtn.innerText = phrases[Math.floor(Math.random() * phrases.length)];
   }
 
-  // 3. Celebrate Logic
+  // 3. Celebrate Function
   function celebrate() {
+    // Fade out card
     card.style.opacity = '0';
     card.style.transform = 'scale(0.8)';
     
     setTimeout(() => {
       card.style.display = 'none';
+      
+      // Show Success Screen
       successScreen.style.display = 'flex';
+      
+      // Slight delay for fade in
       setTimeout(() => {
         successScreen.style.opacity = '1';
         startConfetti();
@@ -282,9 +287,9 @@
     }, 500);
   }
 
-  // 4. Subtle Heart Rain (Classy)
+  // 4. Confetti (Hearts)
   function startConfetti() {
-    for(let i=0; i<30; i++) {
+    for(let i=0; i<40; i++) {
       let el = document.createElement('div');
       el.innerHTML = '❤️';
       el.style.position = 'fixed';
@@ -293,17 +298,17 @@
       el.style.fontSize = (Math.random() * 20 + 15) + 'px';
       el.style.zIndex = '101';
       el.style.opacity = '0.8';
-      el.style.animation = `fall ${Math.random() * 3 + 4}s linear forwards`;
-      el.style.textShadow = '0 0 10px rgba(255, 10, 84, 0.8)';
+      el.style.animation = `fall ${Math.random() * 4 + 3}s linear forwards`;
+      el.style.textShadow = '0 0 10px rgba(255, 0, 60, 0.8)';
       document.body.appendChild(el);
     }
     
     const style = document.createElement('style');
-    style.innerHTML = `@keyframes fall { to { transform: translateY(110vh); } }`;
+    style.innerHTML = `@keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }`;
     document.head.appendChild(style);
   }
 
-  // Failsafe if she somehow clicks it
+  // Failsafe
   noBtn.addEventListener('click', celebrate);
 
 </script>
