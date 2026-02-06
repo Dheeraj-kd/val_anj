@@ -1,170 +1,155 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Will You Be My Valentine? ❤️</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Will You Be My Valentine ❤️</title>
 
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: 'Poppins', sans-serif;
-      overflow: hidden;
-    }
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Poppins", sans-serif;
+    overflow: hidden;
+    color: white;
+  }
 
-    .container {
-      text-align: center;
-    }
+  .container {
+    text-align: center;
+  }
 
-    h1 {
-      color: #fff;
-      font-size: 3rem;
-      margin-bottom: 30px;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
-    }
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
 
-    .buttons {
-      position: relative;
-      height: 80px;
-    }
+  .buttons {
+    position: relative;
+    height: 80px;
+  }
 
-    button {
-      padding: 15px 40px;
-      font-size: 1.2rem;
-      border: none;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      position: absolute;
-    }
+  button {
+    padding: 15px 45px;
+    font-size: 1.2rem;
+    border-radius: 40px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+    position: absolute;
+  }
 
-    #yesBtn {
-      background-color: #ff4d6d;
-      color: white;
-      left: 50%;
-      transform: translateX(-120%);
-    }
+  #yes {
+    background: #ff2f68;
+    color: white;
+    left: 40%;
+  }
 
-    #noBtn {
-      background-color: #ffffff;
-      color: #ff4d6d;
-      left: 50%;
-      transform: translateX(20%);
-    }
+  #no {
+    background: white;
+    color: #ff2f68;
+    left: 55%;
+  }
 
-    /* Couples Section */
-    .couples {
-      display: none;
-      position: absolute;
-      bottom: 10%;
-      width: 100%;
-      justify-content: center;
-      gap: 120px;
-    }
+  /* Couples animation */
+  .scene {
+    display: none;
+    margin-top: 50px;
+  }
 
-    .couple {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      animation: moveCloser 3s forwards;
-    }
+  .couple {
+    display: flex;
+    justify-content: center;
+    gap: 120px;
+    margin-top: 40px;
+    animation: moveTogether 2.5s forwards;
+  }
 
-    .person {
-      width: 60px;
-      height: 60px;
-      background: #fff;
-      border-radius: 50%;
-      position: relative;
-    }
+  .person {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: white;
+    position: relative;
+  }
 
-    .person::after {
-      content: "❤️";
-      position: absolute;
-      top: -30px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 1.5rem;
-      opacity: 0;
-      animation: heartPop 3s forwards 2s;
-    }
+  .kiss {
+    font-size: 2.5rem;
+    opacity: 0;
+    animation: kissPop 2.5s forwards 1.8s;
+  }
 
-    @keyframes moveCloser {
-      to {
-        gap: 5px;
-      }
-    }
+  @keyframes moveTogether {
+    to { gap: 10px; }
+  }
 
-    @keyframes heartPop {
-      to {
-        opacity: 1;
-        transform: translateX(-50%) scale(1.2);
-      }
-    }
+  @keyframes kissPop {
+    to { opacity: 1; transform: scale(1.2); }
+  }
 
-    .message {
-      display: none;
-      color: white;
-      font-size: 2.2rem;
-      margin-top: 30px;
-      animation: fadeIn 2s forwards;
-    }
+  .message {
+    font-size: 2.2rem;
+    margin-top: 25px;
+    animation: fadeIn 2s forwards;
+  }
 
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-  </style>
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+</style>
 </head>
 
 <body>
 
-  <div class="container">
-    <h1>Will you be my Valentine? 💘</h1>
+<div class="container">
+  <h1>Will you be my Valentine? 💘</h1>
 
-    <div class="buttons">
-      <button id="yesBtn">Yes 💖</button>
-      <button id="noBtn">No 🙈</button>
+  <div class="buttons">
+    <button id="yes">Yes 💖</button>
+    <button id="no">No 🙈</button>
+  </div>
+
+  <div class="scene">
+    <div class="couple">
+      <div class="person"></div>
+      <div class="kiss">💋</div>
+      <div class="person"></div>
+    </div>
+
+    <div class="couple">
+      <div class="person"></div>
+      <div class="kiss">💋</div>
+      <div class="person"></div>
     </div>
 
     <div class="message">Yay! I knew it 😘❤️</div>
   </div>
+</div>
 
-  <div class="couples">
-    <div class="couple">
-      <div class="person"></div>
-      <div class="person"></div>
-    </div>
-    <div class="couple">
-      <div class="person"></div>
-      <div class="person"></div>
-    </div>
-  </div>
+<script>
+  const noBtn = document.getElementById("no");
+  const yesBtn = document.getElementById("yes");
+  const scene = document.querySelector(".scene");
+  const buttons = document.querySelector(".buttons");
 
-  <script>
-    const noBtn = document.getElementById("noBtn");
-    const yesBtn = document.getElementById("yesBtn");
-    const couples = document.querySelector(".couples");
-    const message = document.querySelector(".message");
+  noBtn.addEventListener("mouseover", () => {
+    const x = Math.random() * (window.innerWidth - 120);
+    const y = Math.random() * (window.innerHeight - 120);
+    noBtn.style.left = `${x}px`;
+    noBtn.style.top = `${y}px`;
+  });
 
-    noBtn.addEventListener("mouseover", () => {
-      const x = Math.random() * (window.innerWidth - 150);
-      const y = Math.random() * (window.innerHeight - 150);
-      noBtn.style.left = `${x}px`;
-      noBtn.style.top = `${y}px`;
-    });
-
-    yesBtn.addEventListener("click", () => {
-      document.querySelector(".buttons").style.display = "none";
-      couples.style.display = "flex";
-      message.style.display = "block";
-    });
-  </script>
+  yesBtn.addEventListener("click", () => {
+    buttons.style.display = "none";
+    scene.style.display = "block";
+  });
+</script>
 
 </body>
 </html>
+
