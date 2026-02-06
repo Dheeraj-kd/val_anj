@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>For Anjali ❤️</title>
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
 <style>
   /* --- Reset & Base --- */
   * { box-sizing: border-box; margin: 0; padding: 0; user-select: none; -webkit-tap-highlight-color: transparent; }
@@ -15,11 +15,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Black to Pink Gradient (Dark Aesthetic) */
-    background: linear-gradient(135deg, #000000 0%, #1a0b12 40%, #ff0a54 100%);
+    /* Black to Pink Gradient (Dark Luxury) */
+    background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #ff0a54 100%);
     background-size: 200% 200%;
     animation: gradientShift 10s ease infinite;
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'Cormorant Garamond', serif; /* Elegant Serif Font */
     overflow: hidden;
     position: relative;
     color: white;
@@ -31,12 +31,12 @@
     100% { background-position: 0% 50%; }
   }
 
-  /* --- Floating Background Particles (Glowing) --- */
+  /* --- Floating Background Particles --- */
   .bg-particle {
     position: absolute;
-    background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,10,84,0) 70%);
+    background: radial-gradient(circle, rgba(255, 10, 84, 0.8) 0%, rgba(0,0,0,0) 70%);
     border-radius: 50%;
-    opacity: 0.6;
+    opacity: 0.5;
     animation: floatUp 15s linear infinite;
     bottom: -10vh;
     z-index: 0;
@@ -45,31 +45,29 @@
 
   @keyframes floatUp {
     0% { transform: translateY(0) scale(1); opacity: 0; }
-    20% { opacity: 0.5; }
     100% { transform: translateY(-120vh) scale(0.5); opacity: 0; }
   }
 
   /* --- Main Card --- */
   .card {
-    background: rgba(20, 20, 20, 0.6); /* Dark Glass */
+    background: rgba(20, 20, 20, 0.7); /* Darker Glass */
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    padding: 50px 30px;
+    padding: 60px 40px;
     border-radius: 40px;
-    box-shadow: 0 0 40px rgba(255, 10, 84, 0.3); /* Pink Glow */
+    box-shadow: 0 0 50px rgba(255, 10, 84, 0.2);
     text-align: center;
-    max-width: 420px;
+    max-width: 450px;
     width: 90%;
     z-index: 10;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     transition: transform 0.4s ease, opacity 0.4s;
     position: relative;
   }
 
-  /* Image Container */
+  /* Image Container - Fixed Dimensions to prevent layout shift */
   .img-container {
-    width: 100%;
-    height: 180px; /* Fixed height to prevent layout shift */
+    height: 180px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -77,59 +75,61 @@
   }
 
   .main-img {
-    width: 160px;
-    border-radius: 15px;
+    height: 160px;
     filter: drop-shadow(0 0 15px rgba(255, 10, 84, 0.5));
+    border-radius: 10px;
   }
 
   h1 {
     font-family: 'Dancing Script', cursive;
-    font-size: 3.2rem;
-    color: #ff99ac; /* Soft Pink Text */
-    margin-bottom: 10px;
+    font-size: 3.5rem;
+    color: #ff99ac;
+    margin-bottom: 15px;
     line-height: 1.1;
-    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    text-shadow: 0 4px 10px rgba(0,0,0,0.8);
   }
 
   p {
-    color: #ffd1dc;
-    font-size: 1.1rem;
-    margin-bottom: 35px;
-    font-weight: 500;
+    color: #ebd0d6;
+    font-size: 1.4rem;
+    margin-bottom: 40px;
+    font-weight: 400;
     letter-spacing: 0.5px;
+    line-height: 1.4;
   }
 
   /* Buttons */
   .btn-container {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 25px;
     position: relative;
     height: 60px;
   }
 
   button {
-    padding: 14px 35px;
-    font-size: 1.2rem;
+    padding: 15px 40px;
+    font-size: 1.3rem;
     border-radius: 50px;
     border: none;
     cursor: pointer;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 700;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
+    letter-spacing: 1px;
   }
 
   .yes-btn {
     background: #ff0a54;
     color: white;
-    box-shadow: 0 0 20px rgba(255, 10, 84, 0.6);
+    box-shadow: 0 0 25px rgba(255, 10, 84, 0.5);
     z-index: 5;
   }
   .yes-btn:hover {
-    transform: scale(1.1);
-    background: #ff477e;
-    box-shadow: 0 0 30px rgba(255, 10, 84, 0.8);
+    transform: scale(1.05);
+    background: #ff2c6d;
+    box-shadow: 0 0 35px rgba(255, 10, 84, 0.7);
   }
 
   .no-btn {
@@ -146,49 +146,51 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.9);
+    background: rgba(0,0,0,0.95); /* Deep black fade */
     z-index: 100;
     display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     opacity: 0;
-    transition: opacity 1s ease;
+    transition: opacity 1.5s ease;
+    text-align: center;
+    padding: 20px;
   }
 
   .success-img {
-    width: 250px; /* Larger image */
-    border-radius: 20px;
-    box-shadow: 0 0 50px rgba(255, 10, 84, 0.4);
-    margin-bottom: 30px;
+    height: 200px;
+    margin-bottom: 40px;
     opacity: 0;
-    transform: scale(0.8);
-    animation: popIn 0.8s forwards 0.2s;
-  }
-
-  @keyframes popIn {
-    to { opacity: 1; transform: scale(1); }
+    transform: translateY(20px);
+    animation: fadeUp 1s forwards 0.5s;
+    filter: drop-shadow(0 0 20px rgba(255, 10, 84, 0.3));
+    border-radius: 15px;
   }
 
   .final-msg {
     font-family: 'Dancing Script', cursive;
-    font-size: 3.5rem;
+    font-size: 4rem;
     color: #ff0a54;
-    text-shadow: 0 0 10px rgba(255, 10, 84, 0.5);
-    text-align: center;
+    text-shadow: 0 0 15px rgba(255, 10, 84, 0.5);
+    margin-bottom: 20px;
     opacity: 0;
-    animation: fadeInUp 1s forwards 0.8s;
+    animation: fadeUp 1s forwards 1s;
   }
 
-  .sub-msg {
-    font-size: 1.2rem;
-    color: #ccc;
-    margin-top: 10px;
+  .deep-line {
+    font-size: 1.5rem;
+    color: #ddd;
+    max-width: 600px;
+    line-height: 1.6;
     opacity: 0;
-    animation: fadeInUp 1s forwards 1.2s;
+    animation: fadeUp 1s forwards 1.5s;
+    font-style: italic;
   }
 
-  @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
 
 </style>
 </head>
@@ -196,26 +198,26 @@
 
 <div class="card" id="card">
   <div class="img-container">
-    <img src="https://media1.tenor.com/m/f28w8m-tC54AAAAC/cute-cat.gif" class="main-img" alt="Cute Cat">
-  </div>
+    <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExbmM2ZDJ4ZWh4cm00aHh4OG54bm54bm54bm54bm54bm54/L2r3K7Hq8qQ5a/giphy.gif" class="main-img" alt="Cute Cat">
+    </div>
   
   <h1>Anjali, will you be my Valentine? 🌹</h1>
   <p>I promise to make you the happiest! ✨</p>
   
   <div class="btn-container">
-    <button class="yes-btn" onclick="celebrate()">Yes! 💖</button>
-    <button class="no-btn" id="no-btn">No 🙈</button>
+    <button class="yes-btn" onclick="celebrate()">Yes, Forever ❤️</button>
+    <button class="no-btn" id="no-btn">No</button>
   </div>
 </div>
 
 <div class="success-overlay" id="success-screen">
-  <img src="https://media1.tenor.com/m/Al_N4wX_aT8AAAAC/milk-and-mocha-hug.gif" class="success-img" alt="Hug">
+  <img src="https://media.giphy.com/media/l4pTfx2qLszoacZRS/giphy.gif" class="success-img" alt="Hug">
   
   <div class="final-msg">
-    Yay! I love you, Anjali! ❤️
+    I love you, Anjali.
   </div>
-  <div class="sub-msg">
-    (It's a date! 🥂)
+  <div class="deep-line">
+    "I choose you. And I'll choose you over and over, without pause, without a doubt, in a heartbeat. I'll keep choosing you." 🥂
   </div>
 </div>
 
@@ -224,13 +226,13 @@
   const card = document.getElementById('card');
   const successScreen = document.getElementById('success-screen');
 
-  // 1. Create Floating Background Particles (Glowing Dots)
+  // 1. Particle Background
   function createParticles() {
-    for(let i=0; i<30; i++) {
+    for(let i=0; i<40; i++) {
       let p = document.createElement('div');
       p.className = 'bg-particle';
       p.style.left = Math.random() * 100 + 'vw';
-      p.style.width = Math.random() * 10 + 5 + 'px';
+      p.style.width = Math.random() * 8 + 4 + 'px';
       p.style.height = p.style.width;
       p.style.animationDuration = (Math.random() * 10 + 10) + 's';
       p.style.animationDelay = (Math.random() * 5) + 's';
@@ -239,18 +241,20 @@
   }
   createParticles();
 
-  // 2. The Smart "No" Button Logic
+  // 2. Button Chase Logic (Impossible to click)
   const events = ['mouseover', 'touchstart', 'click'];
   events.forEach(event => {
     noBtn.addEventListener(event, (e) => {
-      if(event === 'click') e.preventDefault();
+      e.preventDefault(); // Stop default click
       moveButton();
     });
   });
 
   function moveButton() {
-    const maxX = window.innerWidth - noBtn.offsetWidth - 30;
-    const maxY = window.innerHeight - noBtn.offsetHeight - 30;
+    const maxX = window.innerWidth - noBtn.offsetWidth - 50;
+    const maxY = window.innerHeight - noBtn.offsetHeight - 50;
+    
+    // Calculate new position
     const x = Math.max(20, Math.random() * maxX);
     const y = Math.max(20, Math.random() * maxY);
 
@@ -258,12 +262,12 @@
     noBtn.style.left = `${x}px`;
     noBtn.style.top = `${y}px`;
     
-    // Playful text changes
-    const phrases = ["Where you going?", "Come back! 🥺", "Try again! 🌹", "Nope! 👻", "Anjali pls!"];
+    // Playful Phrases
+    const phrases = ["Try again! 🌹", "Not an option!", "Don't be shy!", "Look here! 👇", "Anjali pls!"];
     noBtn.innerText = phrases[Math.floor(Math.random() * phrases.length)];
   }
 
-  // 3. Celebration Animation
+  // 3. Celebrate Logic
   function celebrate() {
     card.style.opacity = '0';
     card.style.transform = 'scale(0.8)';
@@ -275,30 +279,31 @@
         successScreen.style.opacity = '1';
         startConfetti();
       }, 50);
-    }, 400);
+    }, 500);
   }
 
-  // 4. Romantic Confetti (Hearts only)
+  // 4. Subtle Heart Rain (Classy)
   function startConfetti() {
-    for(let i=0; i<50; i++) {
+    for(let i=0; i<30; i++) {
       let el = document.createElement('div');
       el.innerHTML = '❤️';
       el.style.position = 'fixed';
       el.style.left = Math.random() * 100 + 'vw';
       el.style.top = '-50px';
-      el.style.fontSize = (Math.random() * 20 + 20) + 'px';
+      el.style.fontSize = (Math.random() * 20 + 15) + 'px';
       el.style.zIndex = '101';
-      el.style.animation = `fall ${Math.random() * 3 + 3}s linear forwards`;
+      el.style.opacity = '0.8';
+      el.style.animation = `fall ${Math.random() * 3 + 4}s linear forwards`;
       el.style.textShadow = '0 0 10px rgba(255, 10, 84, 0.8)';
       document.body.appendChild(el);
     }
     
     const style = document.createElement('style');
-    style.innerHTML = `@keyframes fall { to { transform: translateY(110vh) rotate(360deg); } }`;
+    style.innerHTML = `@keyframes fall { to { transform: translateY(110vh); } }`;
     document.head.appendChild(style);
   }
 
-  // Failsafe
+  // Failsafe if she somehow clicks it
   noBtn.addEventListener('click', celebrate);
 
 </script>
