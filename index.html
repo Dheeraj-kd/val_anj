@@ -3,153 +3,254 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Will You Be My Valentine ❤️</title>
-
+<title>For You 🎀</title>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
 <style>
+  * {
+    box-sizing: border-box;
+  }
+
   body {
     margin: 0;
     height: 100vh;
-    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    /* Aesthetic Pastel Gradient */
+    background: linear-gradient(120deg, #fccb90 0%, #d57eeb 100%);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: "Poppins", sans-serif;
+    font-family: 'Quicksand', sans-serif;
     overflow: hidden;
-    color: white;
+    position: relative;
   }
 
+  @keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Floating Hearts Background */
+  .floating-heart {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.6);
+    animation: floatUp linear infinite;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  @keyframes floatUp {
+    from { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+    to { transform: translateY(-10vh) rotate(360deg); opacity: 1; }
+  }
+
+  /* Glassmorphism Card */
   .container {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    padding: 40px 60px;
+    border-radius: 30px;
     text-align: center;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    z-index: 10;
+    max-width: 90%;
+    transition: transform 0.3s ease;
+  }
+
+  .gif-container img {
+    width: 150px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
   }
 
   h1 {
+    font-family: 'Dancing Script', cursive;
     font-size: 3rem;
-    margin-bottom: 30px;
-    text-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    color: #fff;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    margin: 0 0 30px 0;
   }
 
   .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+    min-height: 60px;
     position: relative;
-    height: 80px;
   }
 
   button {
-    padding: 15px 45px;
+    padding: 12px 30px;
     font-size: 1.2rem;
-    border-radius: 40px;
+    border-radius: 50px;
     border: none;
     cursor: pointer;
-    transition: 0.3s ease;
-    position: absolute;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   }
 
   #yes {
-    background: #ff2f68;
-    color: white;
-    left: 40%;
+    background: #fff;
+    color: #ff6b81;
+  }
+
+  #yes:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(255, 107, 129, 0.3);
   }
 
   #no {
-    background: white;
-    color: #ff2f68;
-    left: 55%;
+    background: rgba(255, 255, 255, 0.3);
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.6);
   }
 
-  /* Couples animation */
-  .scene {
+  /* Success Message */
+  .success-message {
     display: none;
-    margin-top: 50px;
+    flex-direction: column;
+    align-items: center;
+    animation: popIn 0.5s ease;
   }
 
-  .couple {
-    display: flex;
-    justify-content: center;
-    gap: 120px;
-    margin-top: 40px;
-    animation: moveTogether 2.5s forwards;
+  @keyframes popIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
   }
 
-  .person {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background: white;
-    position: relative;
+  .success-message p {
+    font-size: 1.5rem;
+    color: white;
+    margin-top: 10px;
   }
 
-  .kiss {
-    font-size: 2.5rem;
-    opacity: 0;
-    animation: kissPop 2.5s forwards 1.8s;
-  }
-
-  @keyframes moveTogether {
-    to { gap: 10px; }
-  }
-
-  @keyframes kissPop {
-    to { opacity: 1; transform: scale(1.2); }
-  }
-
-  .message {
-    font-size: 2.2rem;
-    margin-top: 25px;
-    animation: fadeIn 2s forwards;
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
 </style>
 </head>
 
 <body>
 
+<div id="bg-hearts"></div>
+
 <div class="container">
-  <h1>Will you be my Valentine? 💘</h1>
-
-  <div class="buttons">
-    <button id="yes">Yes 💖</button>
-    <button id="no">No 🙈</button>
+  
+  <div id="ask-view">
+    <div class="gif-container">
+      <img src="https://media1.tenor.com/m/7zK5X-1LzjkAAAAC/bear-cute.gif" alt="Cute Bear">
+    </div>
+    <h1>Will you be my Valentine? 🥺</h1>
+    
+    <div class="buttons">
+      <button id="yes">Yes! 💖</button>
+      <button id="no">No 🙄</button>
+    </div>
   </div>
 
-  <div class="scene">
-    <div class="couple">
-      <div class="person"></div>
-      <div class="kiss">💋</div>
-      <div class="person"></div>
+  <div class="success-message" id="success-view">
+    <div class="gif-container">
+      <img src="https://media1.tenor.com/m/Al_N4wX_aT8AAAAC/milk-and-mocha-hug.gif" alt="Hug">
     </div>
-
-    <div class="couple">
-      <div class="person"></div>
-      <div class="kiss">💋</div>
-      <div class="person"></div>
-    </div>
-
-    <div class="message">Yay! I knew it 😘❤️</div>
+    <h1>YAYYY! I knew it! 🥰</h1>
+    <p>See you on the 14th! 🌹</p>
   </div>
+
 </div>
 
 <script>
-  const noBtn = document.getElementById("no");
   const yesBtn = document.getElementById("yes");
-  const scene = document.querySelector(".scene");
-  const buttons = document.querySelector(".buttons");
+  const noBtn = document.getElementById("no");
+  const askView = document.getElementById("ask-view");
+  const successView = document.getElementById("success-view");
+  const container = document.querySelector(".container");
 
-  noBtn.addEventListener("mouseover", () => {
-    const x = Math.random() * (window.innerWidth - 120);
-    const y = Math.random() * (window.innerHeight - 120);
-    noBtn.style.left = `${x}px`;
-    noBtn.style.top = `${y}px`;
+  // Chaos Variables
+  const phrases = [
+    "No 🙄", "Are you sure?", "Really?", "Think again!", 
+    "Last chance!", "Surely not?", "You might regret this!", 
+    "Give it another thought!", "Are you absolutely certain?", 
+    "This could be a mistake!", "Have a heart!", 
+    "Don't be so cold!", "Change of heart?", "Wouldn't you reconsider?", 
+    "Is that your final answer?", "You're breaking my heart ;(", 
+    "Pls? 🥺", "Pretty pls? 🥺"
+  ];
+  let noCount = 0;
+  let currentFontSize = 1.2;
+
+  // 1. "No" Button Interaction (Chaos)
+  noBtn.addEventListener("click", () => {
+    noCount++;
+    
+    // Change text randomly
+    const randomPhrase = phrases[Math.min(noCount, phrases.length - 1)];
+    noBtn.innerText = randomPhrase;
+
+    // Make Yes button Grow
+    currentFontSize += 0.5; // Grow faster
+    yesBtn.style.fontSize = `${currentFontSize}rem`;
+    yesBtn.style.padding = `${currentFontSize * 10}px ${currentFontSize * 30}px`;
+
+    // Visual Chaos: Shake the container
+    container.style.transform = `translate(${Math.random()*10 - 5}px, ${Math.random()*10 - 5}px)`;
+    setTimeout(() => container.style.transform = "translate(0,0)", 200);
   });
 
+  // 2. "Yes" Button Interaction
   yesBtn.addEventListener("click", () => {
-    buttons.style.display = "none";
-    scene.style.display = "block";
+    askView.style.display = "none";
+    successView.style.display = "flex";
+    startConfetti();
   });
+
+  // 3. Background Floating Hearts Generator
+  function createHeart() {
+    const heart = document.createElement('div');
+    heart.classList.add('floating-heart');
+    heart.innerHTML = '❤️';
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.animationDuration = Math.random() * 3 + 4 + 's';
+    heart.style.fontSize = Math.random() * 20 + 10 + 'px';
+    document.body.appendChild(heart);
+    
+    setTimeout(() => {
+      heart.remove();
+    }, 7000);
+  }
+  setInterval(createHeart, 300);
+
+  // 4. Confetti Effect (Simple Implementation)
+  function startConfetti() {
+    for(let i=0; i<100; i++) {
+      const confetti = document.createElement('div');
+      confetti.style.position = 'fixed';
+      confetti.style.left = Math.random() * 100 + 'vw';
+      confetti.style.top = '-10px';
+      confetti.style.width = '10px';
+      confetti.style.height = '10px';
+      confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
+      confetti.style.borderRadius = '50%';
+      confetti.style.zIndex = '1000';
+      confetti.style.animation = `fall ${Math.random() * 3 + 2}s linear forwards`;
+      
+      document.body.appendChild(confetti);
+      
+      // Add keyframes dynamically for falling
+      const styleSheet = document.createElement("style");
+      styleSheet.innerHTML = `
+        @keyframes fall {
+          to { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+        }
+      `;
+      document.head.appendChild(styleSheet);
+    }
+  }
+
 </script>
 
 </body>
 </html>
-
