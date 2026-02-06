@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>For You 🎀</title>
+<title>For My Love ❤️</title>
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
 <style>
   /* --- Reset & Base --- */
@@ -14,75 +14,81 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Soft Aesthetic Gradient */
-    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+    background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
     font-family: 'Nunito', sans-serif;
     overflow: hidden;
     position: relative;
   }
 
-  /* Floating Background Hearts */
+  /* --- Floating Background Hearts (Subtle) --- */
   .bg-heart {
     position: absolute;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255, 255, 255, 0.4);
     font-size: 2rem;
-    animation: floatUp 8s linear infinite;
-    bottom: -50px;
+    animation: floatUp 10s linear infinite;
+    bottom: -10vh;
     z-index: 0;
   }
 
   @keyframes floatUp {
     0% { transform: translateY(0) rotate(0deg); opacity: 0; }
-    50% { opacity: 0.8; }
-    100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+    20% { opacity: 0.6; }
+    100% { transform: translateY(-120vh) rotate(360deg); opacity: 0; }
   }
 
-  /* --- Main Card --- */
+  /* --- Main Card (Question Phase) --- */
   .card {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 50px 40px;
     border-radius: 30px;
-    box-shadow: 0 10px 40px rgba(255, 105, 135, 0.2);
+    box-shadow: 0 20px 60px rgba(255, 105, 135, 0.3);
     text-align: center;
-    max-width: 380px;
+    max-width: 450px;
     width: 90%;
     z-index: 10;
-    border: 4px solid #fff;
-    transition: transform 0.3s ease;
+    border: 3px solid #fff;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.5s;
+    position: relative;
   }
 
-  /* Images/GIFs */
-  .gif-container img {
-    width: 160px;
-    border-radius: 15px;
+  /* Using Emojis instead of Images for reliability */
+  .emoji-mascot {
+    font-size: 5rem;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 5px 10px rgba(0,0,0,0.1));
+    animation: bounce 2s infinite;
   }
 
-  /* Typography */
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
   h1 {
     font-family: 'Dancing Script', cursive;
-    font-size: 2.8rem;
+    font-size: 3rem;
     color: #ff4757;
-    margin: 15px 0;
-    line-height: 1.2;
+    margin-bottom: 10px;
   }
 
   p {
     color: #ff6b81;
-    font-size: 1.1rem;
-    margin-bottom: 30px;
+    font-size: 1.2rem;
+    margin-bottom: 35px;
+    font-weight: 600;
   }
 
   /* Buttons */
   .btn-group {
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 20px;
     position: relative;
   }
 
   button {
-    padding: 12px 25px;
-    font-size: 1.1rem;
+    padding: 15px 40px;
+    font-size: 1.2rem;
     border-radius: 50px;
     border: none;
     cursor: pointer;
@@ -92,13 +98,13 @@
   }
 
   .yes-btn {
-    background: #ff4757;
+    background: linear-gradient(45deg, #ff4757, #ff6b81);
     color: white;
-    box-shadow: 0 5px 15px rgba(255, 71, 87, 0.3);
+    box-shadow: 0 5px 20px rgba(255, 71, 87, 0.4);
   }
   .yes-btn:hover {
-    transform: scale(1.05);
-    background: #e04050;
+    transform: scale(1.1);
+    box-shadow: 0 10px 30px rgba(255, 71, 87, 0.6);
   }
 
   .no-btn {
@@ -107,140 +113,209 @@
     border: 2px solid #ffede9;
   }
 
-  /* --- The Kiss Animation View --- */
-  .kiss-view {
-    display: none; /* Hidden by default */
+  /* --- Full Screen Success Overlay --- */
+  .success-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+    z-index: 100;
+    display: none; /* Hidden initially */
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    height: 300px;
-    position: relative;
+    align-items: center;
   }
 
-  .emoji-couple {
+  /* The Big Hug Animation */
+  .couple-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 5rem;
-    margin-top: 20px;
+    margin-bottom: 30px;
     position: relative;
-    height: 100px;
   }
 
-  /* The Left Emoji */
-  .emoji-left {
-    position: absolute;
-    left: -100px; /* Start off screen */
-    animation: slideInLeft 2s forwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  .emoji-partner {
+    font-size: 8rem;
+    position: relative;
+    transition: all 0.5s;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
   }
 
-  /* The Right Emoji */
-  .emoji-right {
-    position: absolute;
-    right: -100px; /* Start off screen */
-    transform: scaleX(-1); /* Flip face to look at the other */
-    animation: slideInRight 2s forwards cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  /* Animation Classes */
+  .slide-left {
+    animation: slideInLeft 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    transform: translateX(-500px); /* Start off screen */
   }
 
-  /* The Heart Pop */
-  .heart-pop {
-    position: absolute;
-    font-size: 3rem;
-    opacity: 0;
-    top: -20px;
-    animation: heartPop 0.8s forwards 2s; /* Starts after slide ends */
+  .slide-right {
+    animation: slideInRight 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    transform: translateX(500px) scaleX(-1); /* Start off screen */
   }
 
   @keyframes slideInLeft {
-    to { left: -10px; }
+    to { transform: translateX(20px) rotate(-10deg); }
   }
 
   @keyframes slideInRight {
-    to { right: -10px; transform: scaleX(-1); }
+    to { transform: translateX(-20px) scaleX(-1) rotate(-10deg); }
+  }
+
+  /* Heart Explosion Center */
+  .heart-explosion {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0;
+    animation: heartPop 0.8s forwards 0.8s;
   }
 
   @keyframes heartPop {
-    0% { transform: scale(0); opacity: 0; }
-    50% { transform: scale(1.4); opacity: 1; }
-    100% { transform: scale(1); opacity: 1; }
+    0% { font-size: 0; opacity: 0; }
+    50% { font-size: 8rem; opacity: 1; }
+    100% { font-size: 6rem; opacity: 1; transform: translate(-50%, -60%); }
   }
 
-  .success-text {
-    opacity: 0;
-    margin-top: 20px;
-    font-size: 1.8rem;
-    color: #ff4757;
+  .final-text {
     font-family: 'Dancing Script', cursive;
-    animation: fadeIn 1s forwards 2.5s;
+    font-size: 4rem;
+    color: #fff;
+    text-shadow: 0 4px 10px rgba(255, 71, 87, 0.4);
+    opacity: 0;
+    animation: fadeInUp 1s forwards 1.2s;
+    text-align: center;
+    line-height: 1.2;
   }
 
-  @keyframes fadeIn {
-    to { opacity: 1; }
+  @keyframes fadeInUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Sparkles */
+  .sparkle {
+    position: absolute;
+    color: #fff;
+    font-size: 1.5rem;
+    animation: twinkle 1.5s infinite;
+  }
+  
+  @keyframes twinkle {
+    0%, 100% { opacity: 0; transform: scale(0.5); }
+    50% { opacity: 1; transform: scale(1.2); }
   }
 
 </style>
 </head>
 <body>
 
-<div class="card" id="main-card">
+<div class="card" id="card">
+  <div class="emoji-mascot">🧸</div>
+  <h1>Will you be my Valentine?</h1>
+  <p>Every moment with you is a treasure. ✨</p>
   
-  <div id="question-step">
-    <div class="gif-container">
-      <img src="https://media1.tenor.com/m/f28w8m-tC54AAAAC/cute-cat.gif" alt="Cute Cat Rose">
-    </div>
-    <h1>Will you be my Valentine? 🌹</h1>
-    <p>I promise to buy you chocolates! 🍫</p>
-    
-    <div class="btn-group">
-      <button class="yes-btn" onclick="startKissAnimation()">Yes 💖</button>
-      <button class="no-btn" id="no-btn" onmouseover="moveNoButton()">No 🙈</button>
-    </div>
+  <div class="btn-group">
+    <button class="yes-btn" onclick="celebrate()">Yes! 💖</button>
+    <button class="no-btn" id="no-btn" onmouseover="moveNo()">No 🙈</button>
   </div>
+</div>
 
-  <div class="kiss-view" id="kiss-step">
-    <div class="emoji-couple">
-      <div class="emoji-left">😽</div>
-      <div class="heart-pop">💖</div>
-      <div class="emoji-right">😽</div>
-    </div>
-    <div class="success-text">Yay! It's a date! awww 🥰</div>
+<div class="success-overlay" id="success-screen">
+  
+  <div class="couple-container">
+    <div class="emoji-partner slide-left">🐻</div> <div class="heart-explosion">💖</div>
+    <div class="emoji-partner slide-right">🐰</div> </div>
+  
+  <div class="final-text">
+    Yay! It's a date! <br> I love you! 🥰
   </div>
 
 </div>
 
 <script>
-  // 1. Generate Floating Hearts Background
-  function createHearts() {
-    const container = document.body;
-    for(let i=0; i<20; i++) {
+  // 1. Background Hearts (Keep them, as requested)
+  function createBgHearts() {
+    const body = document.body;
+    for(let i=0; i<30; i++) {
       let heart = document.createElement('div');
       heart.className = 'bg-heart';
-      heart.innerHTML = '❤️';
+      heart.innerHTML = ['❤️', '💖', '🌸', '✨'][Math.floor(Math.random()*4)];
       heart.style.left = Math.random() * 100 + 'vw';
-      heart.style.animationDuration = (Math.random() * 5 + 5) + 's';
+      heart.style.animationDuration = (Math.random() * 5 + 8) + 's';
       heart.style.animationDelay = (Math.random() * 5) + 's';
-      container.appendChild(heart);
+      heart.style.fontSize = (Math.random() * 20 + 20) + 'px';
+      body.appendChild(heart);
     }
   }
-  createHearts();
+  createBgHearts();
 
-  // 2. Button Logic
-  function startKissAnimation() {
-    // Hide Question
-    document.getElementById('question-step').style.display = 'none';
-    
-    // Show Animation Container
-    const kissStep = document.getElementById('kiss-step');
-    kissStep.style.display = 'flex';
-  }
-
-  // 3. Playful "No" Button (Gentle move, not chaos)
-  function moveNoButton() {
+  // 2. The "No" Button Logic (Playful)
+  function moveNo() {
     const btn = document.getElementById('no-btn');
-    const x = Math.random() * 100 - 50; // Move left/right slightly
-    const y = Math.random() * 100 - 50; // Move up/down slightly
+    const x = Math.random() * 150 - 75;
+    const y = Math.random() * 150 - 75;
     btn.style.transform = `translate(${x}px, ${y}px)`;
   }
+
+  // 3. The "Yes" Celebration (Full Screen Impact)
+  function celebrate() {
+    // Hide the initial card
+    const card = document.getElementById('card');
+    card.style.transform = "scale(0.8)";
+    card.style.opacity = "0";
+    
+    setTimeout(() => {
+      card.style.display = 'none';
+      
+      // Show Success Overlay
+      const successScreen = document.getElementById('success-screen');
+      successScreen.style.display = 'flex';
+      
+      // Start Particles (Sparkles & More Hearts)
+      createSparkles();
+    }, 400);
+  }
+
+  // 4. Sparkles Effect
+  function createSparkles() {
+    const successScreen = document.getElementById('success-screen');
+    
+    // Add 50 random sparkles
+    for(let i=0; i<50; i++) {
+      let sparkle = document.createElement('div');
+      sparkle.className = 'sparkle';
+      sparkle.innerHTML = '✨';
+      sparkle.style.left = Math.random() * 100 + 'vw';
+      sparkle.style.top = Math.random() * 100 + 'vh';
+      sparkle.style.animationDelay = Math.random() * 2 + 's';
+      successScreen.appendChild(sparkle);
+    }
+
+    // Add falling roses/hearts
+    for(let i=0; i<30; i++) {
+      let drop = document.createElement('div');
+      drop.style.position = 'fixed';
+      drop.style.top = '-50px';
+      drop.style.left = Math.random() * 100 + 'vw';
+      drop.innerHTML = ['🌹', '💋', '❤️'][Math.floor(Math.random() * 3)];
+      drop.style.fontSize = (Math.random() * 20 + 20) + 'px';
+      drop.style.animation = `fall ${Math.random() * 2 + 3}s linear infinite`;
+      drop.style.zIndex = '90';
+      successScreen.appendChild(drop);
+    }
+    
+    // Inject the keyframes for falling
+    const style = document.createElement('style');
+    style.innerHTML = `
+      @keyframes fall {
+        to { transform: translateY(110vh) rotate(360deg); }
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
 </script>
 
 </body>
